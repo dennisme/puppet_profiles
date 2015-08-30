@@ -11,7 +11,7 @@ class profiles::base {
     require => Package['epel'],
   }
   
-  package { 'git':
+  package { 'atop':
     ensure => present,
     require => Package['epel'],
   }
@@ -35,7 +35,7 @@ class profiles::base {
      ensure   => 'present',
      home     => '/home/dennisme',
      password => '$6$6xtHwBV0$jR9ikiC79tC2pXQXsjMwwnNzeDWUST4TEUbkpMQvtARCh0SwTztHSL0UFjm8h8Ekkq7/RJyRRncjJVWq9N/wZ/',
-     shell    => '/bin/bash'
-     groups   => 'wheel'
+     shell    => '/bin/bash',
+     groups   => 'wheel',
   }
 }
