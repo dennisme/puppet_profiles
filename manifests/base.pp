@@ -6,7 +6,7 @@ class profiles::base {
     require => Class['epel'],
   }
   
-  package { 'itop': 
+  package { 'iotop': 
     ensure => present,
     require => Class['epel'],
   }
@@ -26,16 +26,17 @@ class profiles::base {
     require => Class['epel'],
   }
   
-  package { 'nc':
+  package { 'nmap-ncat':
     ensure => present,
     require => Class['epel'],
   }
 
   user { 'dennisme':
-     ensure   => 'present',
-     home     => '/home/dennisme',
-     password => '$6$6xtHwBV0$jR9ikiC79tC2pXQXsjMwwnNzeDWUST4TEUbkpMQvtARCh0SwTztHSL0UFjm8h8Ekkq7/RJyRRncjJVWq9N/wZ/',
-     shell    => '/bin/bash',
-     groups   => 'wheel',
+     ensure     => 'present',
+     home       => '/home/dennisme',
+     managehome => 'true',
+     password   => '$6$6xtHwBV0$jR9ikiC79tC2pXQXsjMwwnNzeDWUST4TEUbkpMQvtARCh0SwTztHSL0UFjm8h8Ekkq7/RJyRRncjJVWq9N/wZ/',
+     shell      => '/bin/bash',
+     groups     => 'wheel',
   }
 }
